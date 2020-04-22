@@ -5,31 +5,15 @@
   const width = writable(500);
 </script>
 
-<style>
-  nav a {
-    margin: 0 4px;
-    text-transform: capitalize;
-    display: inline-block;
-  }
-  
-</style>
 
-<div class="container">
-
-  <nav class="nav">
-    <div class="nav-left">
-      <a href="/" class="brand" class:active={$isActive('/')}>Comic Book</a>
-    </div>
-    <div class="nav-right">
-      {#each $layout.children.slice(1) as node}
-        <a href={$url(node.path)} class:active={$isActive(node.path)}>
-          <div>{node.title}</div>
-        </a>
-      {/each}
-    </div>
+<div class="container home">
+  <nav>
+    {#each $layout.children as node}
+      <a href={$url(node.path)} class:active={$isActive(node.path)}>
+        {node.title}
+      </a>
+    {/each}
   </nav>
-
-  <slot  />
-  <!-- <slot decorator={TabsTransition} scoped={{ width }} /> -->
-
+  <!-- <slot /> -->
+  <slot decorator={TabsTransition} scoped={{ width }} />
 </div>

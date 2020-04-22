@@ -1,9 +1,42 @@
 /** 
 * GLOBAL
 */
-nav.nav {
+.home>nav {
   margin-bottom: 4rem;
+  display: flex;  
+  align-items: center;
 }
+.home>nav>a { 
+  padding: 0 16px;
+  text-transform: capitalize;
+  align-self: right;
+  
+ }
+.home>nav>a:first-of-type{
+  font-size: 1.75em;
+  margin-right: auto;
+}
+
+
+@media only screen and (max-width: 600px){
+  .home>nav {
+    flex-wrap: wrap;
+  }
+  .home>nav>a:first-of-type{
+    width: 100%;
+    flex: none !important;
+  }
+  .home>nav>a:not(:first-child) {
+    flex: 1;
+  }
+  .home>nav>a {
+    text-align: center;
+    display: inline-block;
+  }
+}
+
+
+
 
 .container.small {
   max-width: 640px;
@@ -93,3 +126,4 @@ form > input {
   width: calc(100vw);
   max-width: 100%;
 }
+
